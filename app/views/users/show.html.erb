@@ -1,0 +1,13 @@
+<p>
+  <b>Surname:</b>
+  <%=h @user.surname %>
+</p>
+
+<p>
+  <b>Firstname:</b>
+  <%=h @user.firstname %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

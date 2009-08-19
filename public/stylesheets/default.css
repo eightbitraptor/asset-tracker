@@ -1,0 +1,71 @@
+body { font-family: Verdana, sans-serif; font-size: 12px; color:#484848; margin: 0; padding: 0; min-width: 900px; }
+
+h1, h2, h3, h4 { font-family: "Trebuchet MS", Verdana, sans-serif;}
+h1 {margin:0; padding:0; font-size: 24px;}
+h2, .wiki h1 {font-size: 20px;padding: 2px 10px 1px 0px;margin: 0 0 10px 0; border-bottom: 1px solid #bbbbbb; color: #444;}
+h3, .wiki h2 {font-size: 16px;padding: 2px 10px 1px 0px;margin: 0 0 10px 0; border-bottom: 1px solid #bbbbbb; color: #444;}
+h4, .wiki h3 {font-size: 13px;padding: 2px 10px 1px 0px;margin-bottom: 5px; border-bottom: 1px dotted #bbbbbb; color: #444;}
+
+pre {
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: pre-wrap;      /* CSS3 */
+    word-wrap: break-word;      /* IE 5.5+ */
+}
+
+/***** Layout *****/
+
+#top-menu {background: #602020; color: #fff; height:1.8em; font-size: 0.8em; padding: 2px 2px 0px 6px;}
+#top-menu ul {margin: 0;  padding: 0;}
+#top-menu li {
+  float:left;
+  list-style-type:none;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  white-space:nowrap;
+}
+#top-menu a {color: #fff; padding-right: 8px; font-weight: bold;}
+#top-menu #loggedas { float: right; margin-right: 0.5em; color: #fff; }
+
+#account {float:right;}
+
+#header {height:6.8em;margin:0;background-color:#8A4040;color:#f8f8f8; padding: 4px 8px 0px 6px; position:relative;}
+#header a {color:#f8f8f8;}
+#header h1 #headerlogo { width: 2em; height: 2em; display: inline; }
+
+#main {background-color:#EEEEEE;}
+
+#content { width: 100%; background-color: #fff; margin: 0px; padding: 6px 10px 10px 10px; z-index: 10; height:600px; min-height: 600px;}
+* html #content{ width: 80%; padding-left: 0; margin-top: 0px; padding: 6px 10px 10px 10px;}
+html>body #content { height: auto; min-height: 600px; overflow: auto; } 
+
+/***** Links *****/
+a, a:link, a:visited{ color: #2A5685; text-decoration: none; }
+a:hover, a:active{ color: #c61a1a; text-decoration: underline;}
+a img{ border: 0; }
+
+/***** Flash & error messages ****/
+#errorExplanation, div.flash, .nodata, .warning {
+    padding: 4px 4px 4px 30px;
+    margin-bottom: 12px;
+	font-size: 1.1em;
+	border: 2px solid;
+}
+
+div.flash {margin-top: 8px;}
+
+div.flash.error, #errorExplanation {
+    background: url(../images/false.png) 8px 5px no-repeat;
+	background-color: #ffe3e3;
+	border-color: #dd0000;
+	color: #550000;
+}
+
+div.flash.notice {
+    background: url(../images/true.png) 8px 5px no-repeat;
+	background-color: #dfffdf;
+	border-color: #9fcf9f;
+	color: #005f00;
+}
+

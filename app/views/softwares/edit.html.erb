@@ -1,0 +1,28 @@
+<h1>Editing software</h1>
+
+<% form_for(@software) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :serial %><br />
+    <%= f.text_field :serial %>
+  </p>
+  <p>
+    <%= f.label :date_purchased %><br />
+    <%= f.datetime_select :date_purchased %>
+  </p>
+  <p>
+    <%= f.label :hardware_id %><br />
+    <%= select "software", "hardware_id", Hardware.find(:all).collect {|t| ["#{t.name} (#{t.serial})", t.id]} %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @software %> |
+<%= link_to 'Back', softwares_path %>

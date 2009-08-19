@@ -1,0 +1,23 @@
+<p>
+  <b>Serial number:</b>
+  <%=h @hardware.serial_number %>
+</p>
+
+<p>
+  <b>Date purchased:</b>
+  <%=h @hardware.date_purchased %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @hardware.user_id %>
+</p>
+
+<p>
+  <b>Hardware type:</b>
+  <%=h @hardware.hardware_type_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_hardware_path(@hardware) %> |
+<%= link_to 'Back', hardwares_path %>

@@ -1,0 +1,28 @@
+<h1>New hardware</h1>
+
+<% form_for(@hardware) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :serial_number %><br />
+    <%= f.text_field :serial_number %>
+  </p>
+  <p>
+    <%= f.label :date_purchased %><br />
+    <%= f.datetime_select :date_purchased %>
+  </p>
+  <p>
+    <%= f.label :user_id %><br />
+    <%= select "hardware", "user_id", User.find(:all).collect{|u| ["#{u.surname}, #{u.firstname}", u.id ]} %>
+  </p>
+  <p>
+    <%= f.label :hardware_type_id %><br />
+    <%= select "hardware", "hardware_type_id", HardwareType.find(:all).collect { |t| ["#{t.hardware_type} [#{t.manufacturer}]", t.id]} %>
+    <%= link_to 'New Hardware Type', :controller => 'hardware_types' , :action => 'new' %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', hardwares_path %>

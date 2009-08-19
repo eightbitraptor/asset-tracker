@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  serial_number: MyString
+  date_purchased: 2009-05-28 14:25:22
+  user_id: 1
+  hardware_type_id: 1
+
+two:
+  serial_number: MyString
+  date_purchased: 2009-05-28 14:25:22
+  user_id: 1
+  hardware_type_id: 1

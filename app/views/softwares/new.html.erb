@@ -13,11 +13,7 @@
   </p>
   <p>
     <%= f.label :date_purchased %><br />
-    <%= f.datetime_select :date_purchased %>
-  </p>
-  <p>
-    <%= f.label :hardware_id %><br />
-    <%= select "software", "hardware_id", Hardware.find(:all).collect {|t| ["#{t.name} (#{t.serial})", t.id]} %>
+    <%= f.unobtrusive_date_text_picker :date_purchased %>
   </p>
   <p>
     <%= f.submit "Create" %>

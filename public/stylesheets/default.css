@@ -36,9 +36,9 @@ pre {
 
 #main {background-color:#EEEEEE;}
 
-#content { width: 100%; background-color: #fff; margin: 0px; padding: 6px 10px 10px 10px; z-index: 10; height:600px; min-height: 600px;}
+#content { width: 90%; background-color: #fff; margin: 0; padding: 6px 10px 10px 10px; z-index: 10; height:600px; min-height: 600px;}
 * html #content{ width: 80%; padding-left: 0; margin-top: 0px; padding: 6px 10px 10px 10px;}
-html>body #content { height: auto; min-height: 600px; overflow: auto; } 
+html>body #content { height: auto; min-height: 600px; overflow: auto; }
 
 /***** Links *****/
 a, a:link, a:visited{ color: #2A5685; text-decoration: none; }
@@ -69,3 +69,17 @@ div.flash.notice {
 	color: #005f00;
 }
 
+.username{
+  margin-top:15px;
+}
+
+.stufflist{
+  width:100%;
+  border-collapse:collapse;
+}
+.stufflist td {
+  border:1px #602020 solid;
+  text-align:left;
+  margin:0;
+  padding:0;
+}

@@ -7,11 +7,13 @@
   <title>Hardwares: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'default' %>
   <%= stylesheet_link_tag 'default_layout' %>
+  <%= unobtrusive_datepicker_includes %>
 </head>
 <body>
   
   <div id="top-menu">
     <ul>
+      <li><%= link_to "Home", :controller => 'homepage', :action => 'index' %><br /></li>
       <li><%= link_to "Hardware", :controller => "hardwares", :action => "index" %><br /></li>
       <li><%= link_to "Software", :controller => "softwares", :action => "index" %><br /></li>
       <li><%= link_to "Users", :controller => "users", :action => "index" %></li>
@@ -19,7 +21,7 @@
   </div>
   
   <div id="header">
-    <h1><img id="headerlogo" src="images/my_computer_lite.png" />
+    <h1><img id="headerlogo" src="/images/my_computer_lite.png" />
     <a href="/">Asset Tracker</a></h1>
   </div>
   

@@ -5,7 +5,6 @@ class CreateHardwares < ActiveRecord::Migration
       t.datetime :date_purchased
       t.integer :user_id
       t.integer :hardware_type_id
-
       t.timestamps
     end
   end

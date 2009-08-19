@@ -5,7 +5,7 @@ class CreateSoftwares < ActiveRecord::Migration
       t.string :serial
       t.datetime :date_purchased
       t.integer :hardware_id
-
+      t.integer :user_id
       t.timestamps
     end
   end

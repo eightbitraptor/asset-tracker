@@ -1,22 +1,24 @@
 <h1>Listing users</h1>
 
-<table>
-  <tr>
-    <th>Surname</th>
-    <th>Firstname</th>
-  </tr>
-
 <% for user in @users %>
-  <tr>
-    <td><%=h user.surname %></td>
-    <td><%=h user.firstname %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<div>
+  <div class="right">
+    <%= get_gravatar(user) %>
+  </div>
+  <% link_to edit_user_path(user) do %>
+    <h3 class="username"><%= user.firstname%>, <%= user.surname %></h3>
+  <% end %>
+</div>
+<table>
+  <tr><td>Position: </td><td><%= user.position %></td></tr>
+  <tr><td>Joined Reevoo on: </td><td><%= user.joined_on.strftime("%d %B %Y") %></td></tr>
+  <tr><td>Position: </td><td><%= user.position %></td></tr>
+  <tr><td colspan="2"><%= user.left_yet? %></td></tr>
+</table>
 <% end %>
 </table>
 
 <br />
 
 <%= link_to 'New user', new_user_path %>
+<%= link_to 'Show quitters', :action => 'index', :params => {:left => 'left'} %>

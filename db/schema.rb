@@ -9,11 +9,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090528134959) do
+ActiveRecord::Schema.define(:version => 20090528132852) do
 
   create_table "hardware_types", :force => true do |t|
-    t.string   "hardware_type"
+    t.string   "name"
     t.string   "manufacturer"
+    t.string   "model_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -39,6 +40,10 @@ ActiveRecord::Schema.define(:version => 20090528134959) do
   create_table "users", :force => true do |t|
     t.string   "surname"
     t.string   "firstname"
+    t.string   "email"
+    t.string   "position"
+    t.datetime "joined_on"
+    t.datetime "left_on"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

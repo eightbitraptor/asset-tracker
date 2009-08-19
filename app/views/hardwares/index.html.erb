@@ -1,20 +1,20 @@
 <h1>Listing hardware</h1>
 
-<table>
+<table class="stufflist">
   <tr>
     <th>Serial number</th>
     <th>Date purchased</th>
     <th>User</th>
     <th>Hardware type</th>
+    <th colspan="2">Functions</th>
   </tr>
 
 <% for hardware in @hardwares %>
   <tr>
     <td><%=h hardware.serial_number %></td>
     <td><%=h hardware.date_purchased %></td>
-    <td><%=h hardware.user_id %></td>
-    <td><%=h hardware.hardware_type_id %></td>
-    <td><%= link_to 'Show', hardware %></td>
+    <td><%=h User.find(hardware.user_id).nice_name %></td>
+    <td><%=h HardwareType.find_by_id(hardware.hardware_type_id).name %></td>
     <td><%= link_to 'Edit', edit_hardware_path(hardware) %></td>
     <td><%= link_to 'Destroy', hardware, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

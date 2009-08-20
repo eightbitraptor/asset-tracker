@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def index    
-    @users=User.find(:all, :conditions => "left_on is null") if params['left'].nil?
-    @users=User.find(:all, :conditions => "left_on is not null") if params['left']
+    @users=User.find(:all)
   end
 
   def new

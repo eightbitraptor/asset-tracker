@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   
-  map.connect   'users/:left', :controller => 'users', :action => 'index'
+  #map.connect   'users/:left', :controller => 'users', :action => 'index'
   map.resources :users
   map.resources :softwares
   map.resources :hardwares

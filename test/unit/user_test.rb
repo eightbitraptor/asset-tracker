@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  test "creation of a valid user" do
+    test_user = User.new
+    assert test_user.save
   end
 end

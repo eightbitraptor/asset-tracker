@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20090528132852) do
     t.string   "serial"
     t.datetime "date_purchased"
     t.integer  "hardware_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -26,3 +26,9 @@ Factory.define :software do |f|
   f.hardware_id nil
   f.user_id nil
 end
+
+Factory.define :hardware_type do |f|
+  f.name 'Laptop'
+  f.manufacturer 'Macbook Pro'
+  f.model_number rand(100)
+end

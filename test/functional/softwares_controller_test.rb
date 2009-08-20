@@ -10,36 +10,45 @@ class SoftwaresControllerTest < ActionController::TestCase
   test "should get new" do
     get :new
     assert_response :success
+    assert_template 'new'
   end
 
-  test "should create software" do
-    assert_difference('Software.count') do
-      post :create, :software => { }
-    end
-
-    assert_redirected_to software_path(assigns(:software))
+  test "should create valid software" do
+    post :create, :software => {:name => 'office', :date_purchased => Time.now}
+    assert_redirected_to softwares_path
+    assert_equal 1, Software.find(:all).count
+  end
+  
+  test "should not create invalid software" do
+    post :create , :software => {:name => '', :date_purchased => ''}
+    assert_equal 0, Software.find(:all).count
   end
 
-  test "should show software" do
-    get :show, :id => softwares(:one).id
+  def test_edit
+    software = Factory :software  
+    get :edit, :id => software.id
+    assert_template 'edit'
     assert_response :success
   end
 
-  test "should get edit" do
-    get :edit, :id => softwares(:one).id
-    assert_response :success
+  def test_update_invalid
+    software = Factory :software  
+    put :update, :id => software.id, :software => {:name => '', :date_purchased => Time.now}
+    software.reload
+    assert_equal "Microsoft Windows XP", software.name
   end
 
-  test "should update software" do
-    put :update, :id => softwares(:one).id, :software => { }
-    assert_redirected_to software_path(assigns(:software))
+  def test_update_valid
+    software = Factory :software  
+    put :update, :id => software.id, :software => {:name => 'blahblah', :date_purchased => Time.now}
+    software.reload
+    assert_equal "blahblah", software.name
   end
 
   test "should destroy software" do
-    assert_difference('Software.count', -1) do
-      delete :destroy, :id => softwares(:one).id
-    end
-
-    assert_redirected_to softwares_path
+    post :create, :software => {:name => 'office', :date_purchased => Time.now}
+    assert_equal 1, Software.find(:all).count
+    delete :destroy, :id => Software.last.id
+    assert_equal 0, Software.find(:all).count
   end
 end

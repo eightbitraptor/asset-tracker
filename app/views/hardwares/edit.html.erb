@@ -29,19 +29,16 @@
 
   <h4>Installed Software</h4>
   <ul>
-  <% for software in @hardware.installed_software do %>
+  <% for software in @hardware.software do %>
       <li><%= software.name %></li>
   <% end %>
   </ul>
   
   <h4>Available Software</h4>
   <ul>
-    <% for software in @available_software do %>
-      <li><%= software.name %></li>
-    <% end %>
+
   </ul>
 </table>
-
 <% end %>
 
 <%= link_to 'Show', @hardware %> |

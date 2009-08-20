@@ -30,4 +30,16 @@ class HardwareTest < ActiveSupport::TestCase
     hw = Factory :hardware
     assert_equal [], hw.software
   end
+  
+  test "that array of software can be assigned to hardware" do
+    hware = Factory :hardware
+    some_software = []
+    5.times do
+      sw = Factory(:software, :serial => rand(100))
+      puts sw.attributes
+      some_software << sw
+    end
+    hware.assign(some_software)
+    assert_equal some_software, hware.software
+  end
 end

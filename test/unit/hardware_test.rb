@@ -36,7 +36,6 @@ class HardwareTest < ActiveSupport::TestCase
     some_software = []
     5.times do
       sw = Factory(:software, :serial => rand(100))
-      puts sw.attributes
       some_software << sw
     end
     hware.assign(some_software)

@@ -21,7 +21,6 @@ end
 
 Factory.define :software do |f|
   f.name "Microsoft Windows XP"
-  f.serial "serialkey"
   f.date_purchased Time.now
   f.hardware_id nil
   f.user_id nil

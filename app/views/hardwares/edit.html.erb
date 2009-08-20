@@ -35,6 +35,9 @@
   </ul>
   
   <h4>Available Software</h4>
+    <% for software in Software.find(:all, :conditions => "hardware_id is null") %>
+      <li><%= software.name%></li>
+    <% end %>
   <ul>
 
   </ul>
